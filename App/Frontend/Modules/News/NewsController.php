@@ -86,8 +86,8 @@ class NewsController extends BackController
     $this->page->addVar('title', 'Ajout d\'un commentaire');
   }
 
-  /////////////////////////////////////////A SUPPRIMER SI MARCHE PAS
-  //On veut que quand la personne clique sur signaler un commentaire la bdd soit modifiée dans la colonne signalement. Un texte apparait pour prévenir que la personne a bien signalée et ces commentaires remontent dans frontend/index.
+///SIGNALEMENT D'UN COMMENTAIRE
+//On veut que quand la personne clique sur signaler un commentaire la bdd soit modifiée dans la colonne signalement. Un texte apparait pour prévenir que la personne a bien signalée et sur la bdd un 1 apparait à la place du 0 dans la colonne signalement.
 
   public function executeUpdateSignalementComment(HTTPRequest $request)
   {
@@ -95,21 +95,16 @@ class NewsController extends BackController
     $comment_id = $request->getData('id');
     // On récupère le commentaire avec l'ID récupérer
     $comment = $this->managers->getManagerOf('Comments')->get($comment_id);
-
     //On teste si le commentaire est bien récupéré (si l'id du commentaire existe), sinon on envoie une 404
     if ( $comment === false )
     {
       $this->app->httpResponse()->redirect404();
     }
-
     //On a créé la fonction setSignalement dans Entity/Comment pour lui passer la main comme on n'a pas le droit d'y accéder (privé). On lui demande de passer le boleen à true.
-    //La variable comment contient un objet qui a ses attributs. On lui change l'attibut signalement en true.
+    //La variable comment contient un objet qui a ses attributs. On lui change l'attibut signalement en 1.
     $comment->setSignalement('1');
-
     //On sauvegarde ensuite le nouvel objet avec la nouvelle valeur de signalement (on envoit l'info sur la bdd)
     $this->managers->getManagerOf('Comments')->save($comment);
-
     $this->app->httpResponse()->redirect('news-'.$comment->news().'.html');
   }
-  //FIN SUPPRIMER SI MARCHE PAS
 }
