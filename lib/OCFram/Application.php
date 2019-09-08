@@ -1,5 +1,8 @@
 <?php
 namespace OCFram;
+
+//On a définit dans HTTP.request.php et HTTP.reponse.php comment représenter la requète et ce que nous devons lui envoyer en réponse. La class Application a une fonctionnalité : son nom et plusieurs caractéristiques : son nom, la requête du client et la réponse à lui envoyer.
+//Chaque classe répresentant une application hérite de cette classe Application, il n'est donc pas nécessaire d'instancier cette classe. Cela signifie donc que cette classe est abstraite.
  
 abstract class Application
 {
@@ -15,7 +18,8 @@ abstract class Application
     $this->httpResponse = new HTTPResponse($this);
     $this->user = new User($this);
     $this->config = new Config($this);
- 
+  
+    //Valeur nulle à l'attribut name. Chaque application qui héritera de cette classe sera chargée de spécifier son nom en initialisant cette attribut.
     $this->name = '';
   }
  

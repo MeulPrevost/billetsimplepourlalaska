@@ -11,6 +11,7 @@ use \OCFram\FormHandler;
  
 class NewsController extends BackController
 {
+
   public function executeDelete(HTTPRequest $request)
   {
     $newsId = $request->getData('id');
@@ -37,9 +38,10 @@ class NewsController extends BackController
     $this->page->addVar('title', 'Gestion des news');
  
     $manager = $this->managers->getManagerOf('News');
- 
+
     $this->page->addVar('listeNews', $manager->getList());
     $this->page->addVar('nombreNews', $manager->count());
+    $this->page->addVar('comments', $this->managers->getManagerOf('Comments')->getList());
   }
  
   public function executeInsert(HTTPRequest $request)

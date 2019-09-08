@@ -8,7 +8,8 @@ class Comment extends Entity
   protected $news,
             $auteur,
             $contenu,
-            $date;
+            $date,
+            $signalement;
  
   const AUTEUR_INVALIDE = 1;
   const CONTENU_INVALIDE = 2;
@@ -47,6 +48,11 @@ class Comment extends Entity
   {
     $this->date = $date;
   }
+
+  public function setSignalement($bool)
+  {
+    $this->signalement = $bool;
+  }
  
   public function news()
   {
@@ -66,5 +72,10 @@ class Comment extends Entity
   public function date()
   {
     return $this->date;
+  }
+
+  public function signalement()
+  {
+    return $this->signalement;
   }
 }

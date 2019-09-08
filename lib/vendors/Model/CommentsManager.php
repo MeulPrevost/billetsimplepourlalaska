@@ -52,6 +52,14 @@ abstract class CommentsManager extends Manager
   abstract public function getListOf($news);
  
   /**
+   * Méthode retournant une liste de comments demandée.
+   * @param $debut int La première comments à sélectionner
+   * @param $limite int Le nombre de comments à sélectionner
+   * @return array La liste des news. Chaque entrée est une instance de Comments.
+   */
+  abstract public function getList($debut = -1, $limite = -1);
+
+  /**
    * Méthode permettant de modifier un commentaire.
    * @param $comment Le commentaire à modifier
    * @return void

@@ -13,16 +13,17 @@
   <body>
     <div id="wrap">
       <header>
-        <h1><a href="/">Mon super site</a></h1>
-        <p>Comment ça, il n'y a presque rien ?</p>
+        <h1><a href="/">Billet simple pour l'Alaska</a></h1>
+        <p>Vivez l'expérience d'un polar glacial en ligne...</p>
       </header>
  
       <nav>
         <ul>
           <li><a href="/">Accueil</a></li>
           <?php if ($user->isAuthenticated()) { ?>
-          <li><a href="/admin/">Admin</a></li>
-          <li><a href="/admin/news-insert.html">Ajouter une news</a></li>
+          <li><a href="/admin/news-insert.html">Ajouter un chapitre</a></li>
+          <li><a href="/admin/">Administration des chapitres et des commentaires</a></li>
+          
           <?php } ?>
         </ul>
       </nav>
