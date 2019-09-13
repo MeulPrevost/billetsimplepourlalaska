@@ -17,12 +17,26 @@ function storey_sort($comment_a, $comment_b){
 
 usort($comments, "storey_sort");
 
-foreach ($comments as $comment) 
-{
+foreach ($comments as $comment) :
 	//list($auteur, $contenu, $date, $signalement) = array_values($tall_signalement);
-	echo '<tr><td>', $comment['auteur'], '</td><td>', $comment['contenu'], '</td><td>le ', $comment['date']->format('d/m/Y à H\hi'), '</td><td>', $comment['signalement'],'</td><td><a href="comment-update-', $comment['id'], '.html"><img src="/images/update.png" alt="Accepter" /></a> <a href="comment-delete-', $comment['id'], '.html"><img src="/images/delete.png" alt="Supprimer" /></a></td></tr>', "\n"; 
-}
-
-?>
-
+	?>
+	<tr>
+		<td><?= $comment['auteur'] ?></td>
+		<td><?= $comment['contenu'] ?></td>
+		<td>le <?= $comment['date']->format('d/m/Y à H\hi') ?></td>
+		<?php if ( $comment['signalement'] === '1' ) : ?>
+			<td>Oui!!</td>
+		<?php else : ?>
+			<td>Non :)</td>
+		<?php endif; ?>
+		<td>
+			<a href="comment-update-<?= $comment['id'] ?>.html">
+				<img src="/images/update.png" alt="Accepter" />
+			</a>
+			<a href="comment-delete-<?= $comment['id'] ?>.html">
+				<img src="/images/delete.png" alt="Supprimer" />
+			</a>
+		</td>
+	</tr>
+<?php endforeach; ?>
 </table>
