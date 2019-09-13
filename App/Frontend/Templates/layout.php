@@ -22,7 +22,8 @@
           <li><a href="/">Accueil</a></li>
           <?php if ($user->isAuthenticated()) { ?>
           <li><a href="/admin/news-insert.html">Ajouter un chapitre</a></li>
-          <li><a href="/admin/">Administration des chapitres et des commentaires</a></li>
+          <li><a href="/admin/">Administration des chapitres</a></li>
+          <li><a href="/admin/comments-admin.html">Administration des commentaires</a></li>
           
           <?php } ?>
         </ul>
