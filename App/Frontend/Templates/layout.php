@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>
-      <?= isset($title) ? $title : 'Mon super site' ?>
+      <?= isset($title) ? $title : 'Billet simple Alaska' ?>
     </title>
  
     <meta charset="utf-8" />
@@ -11,10 +11,11 @@
   </head>
  
   <body>
+
     <div id="wrap">
       <header>
         <h1><a href="/">Billet simple pour l'Alaska</a></h1>
-        <p>Vivez l'expérience d'un polar glacial en ligne...</p>
+        <p><br>Reconnectez-vous à votre propre nature...</p>
       </header>
  
       <nav>
@@ -37,7 +38,9 @@
         </section>
       </div>
  
-      <footer></footer>
+      <footer>
+        <p><a href="http://billetsimplepourlalaska/admin/">Admin</a><br>Copyright: MeulPrevost2019</p>
+      </footer>
     </div>
   </body>
 </html>

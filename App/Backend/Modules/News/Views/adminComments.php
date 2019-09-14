@@ -1,7 +1,7 @@
 <h2>ADMINISTRATION DES COMMENTAIRES</h2>
 
-<p style="text-align: center">Voici les commentaires publiés votre blog. Les commentaires signalés sont en premiers et un 1 dans la colonne signalement (les surligner en rouge - cacher la colonne signalement une fois que vérifié que OK). Vous pouvez les supprimer ou les modifier. Attention toute suppression est définitive.<br>
-Note : quand l'admin modifie la valeur de signalement passe à NULL.</p> 
+<p>Voici les commentaires publiés votre blog. Les commentaires signalés remontent en premiers. Vous pouvez les supprimer ou les modifier. Attention toute suppression est définitive.<br>
+</p> 
 
 <table>
   <tr><th>Auteur</th><th>Contenu</th><th>Date d'ajout</th><th>Signalé</th><th>Action</th></tr>

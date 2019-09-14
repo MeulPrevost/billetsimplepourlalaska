@@ -5,10 +5,11 @@
   });
 </script>
 
-
-<h2>Ajouter une news</h2>
+<h2>Modifier une news</h2>
 <form class="form-news" action="" method="post">
+  <p>
     <?= $form ?>
  
-    <input type="submit" value="Ajouter" />
+    <input type="submit" value="Modifier" />
+  </p>
 </form>
