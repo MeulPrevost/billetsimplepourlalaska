@@ -33,7 +33,7 @@ foreach ($comments as $comment) :
 			<a href="comment-update-<?= $comment['id'] ?>.html">
 				<img src="/images/update.png" alt="Accepter" />
 			</a>
-			<a href="comment-delete-<?= $comment['id'] ?>.html">
+			<a href="comment-delete-<?= $comment['id'] ?>.html" onclick="return confirm('Etes vous sûr ?');">
 				<img src="/images/delete.png" alt="Supprimer" />
 			</a>
 		</td>

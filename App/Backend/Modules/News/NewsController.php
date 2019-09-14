@@ -30,7 +30,7 @@ class NewsController extends BackController
  
     $this->app->user()->setFlash('Le commentaire a bien été supprimé !');
  
-    $this->app->httpResponse()->redirect('.');
+    $this->app->httpResponse()->redirect('/admin/comments-admin.html');
   }
  
   public function executeIndex(HTTPRequest $request)
