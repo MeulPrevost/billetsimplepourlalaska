@@ -284,10 +284,18 @@ header #header-links a:hover {
 	font: normal 25px 'Trebuchet MS', Arial, Sans-serif;
 	position: absolute;
 	top:0px;
+	text-align: center;
 	background-color: rgba(255, 255, 255, 0.3);
 	padding: 50px;
 	left: 0px;
 	right: 0px;
+}
+
+.intro-front
+{
+	font: normal 15px 'Trebuchet MS', Arial, Sans-serif;
+	padding-bottom: 50px;
+	text-align: center;
 }
 
 /* Menu */
