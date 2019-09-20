@@ -7,7 +7,7 @@
  
     <meta charset="utf-8" />
  
-    <link rel="stylesheet" href="/css/Envision.css" type="text/css" />
+    <link rel="stylesheet" href="/css/alaska.css" type="text/css" />
   </head>
  
   <body>
@@ -22,9 +22,14 @@
         <ul>
           <li><a href="/">Accueil</a></li>
           <?php if ($user->isAuthenticated()) { ?>
-          <li><a href="/admin/news-insert.html">Ajouter un chapitre</a></li>
-          <li><a href="/admin/">Administration des chapitres</a></li>
-          <li><a href="/admin/comments-admin.html">Administration des commentaires</a></li>
+          <li class="deroulant"><a href="#">Chapitres</a>
+            <ul class="sous">
+              <li><a href="/admin/news-insert.html">Ajouter un chapitre</a></li>
+              <li><a href="/admin/">Administrer les chapitres</a></li>
+            </ul>
+          </li>
+          <li><a href="/admin/comments-admin.html">Commentaires</a></li>
+          <li><a href="/admin/new-user.html">Utilisateurs</a></li>
           
           <?php } ?>
         </ul>

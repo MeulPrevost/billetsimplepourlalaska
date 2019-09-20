@@ -4,9 +4,11 @@ namespace App\Backend\Modules\News;
 use \OCFram\BackController;
 use \OCFram\HTTPRequest;
 use \Entity\News;
+use \Entity\User;
 use \Entity\Comment;
 use \FormBuilder\CommentFormBuilder;
 use \FormBuilder\NewsFormBuilder;
+use \FormBuilder\UserFormBuilder;
 use \OCFram\FormHandler;
  
 class NewsController extends BackController
@@ -102,6 +104,7 @@ class NewsController extends BackController
  
     $this->page->addVar('form', $form->createView());
   }
+  
  
   public function processForm(HTTPRequest $request)
   {
@@ -147,4 +150,5 @@ class NewsController extends BackController
  
     $this->page->addVar('form', $form->createView());
   }
+
 }

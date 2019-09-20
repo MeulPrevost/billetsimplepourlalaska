@@ -1,4 +1,4 @@
-<h2>Modifier un commentaire</h2>
+<h2>COMMENTAIRES</h2>
 <form action="" method="post">
   <p>
     <?= $form ?>

@@ -52,6 +52,16 @@ h3 {
 	color: #666666; 
 }
 
+.texteIntro
+{
+	font-family: 'Trebuchet MS', Tahoma, Sans-serif;
+	padding-bottom: 30px;
+	font-size: 120%;
+	font-weight: bold;
+	text-align: center;
+	line-height: 30px;
+}
+
 /* images */
 img {
    border: none;
@@ -98,18 +108,20 @@ blockquote {
 table {
 	border-collapse: collapse;
 	margin: 10px;	
+	display: flex;
+	justify-content: center;
 }
 th strong {
 	color: #fff;
 }
 th {
-	background: #93BC0C;
+	background: #926D27;
 	height: 29px;
 	padding-left: 12px;
 	padding-right: 12px;
 	color: #FFF;
 	text-align: center;
-	border-left: 1px solid #B6D59A;
+	border-left: 1px solid #CCC;
 	border-bottom: solid 2px #FFF;
 }
 form th {
@@ -202,7 +214,7 @@ input.button {
 ********************************************/ 
 #wrap {
 	width: 900px;
-	background-color: #CCC;
+	background-color: #FFF;
 	margin: 0 auto;
 	text-align: left;
 }
@@ -288,6 +300,7 @@ header #header-links a:hover {
 	padding: 50px;
 	left: 0px;
 	right: 0px;
+	text-align: center;
 }
 
 /* Menu */
@@ -297,7 +310,7 @@ nav
 	margin: 0 auto; padding: 0;
 	background: #8E5434;	
 	font: bold 12px/37px Verdana, Arial, Tahoma, Sans-serif;
-	height: 37px;
+	height: 60px;
 	width: 900px;	
 }
 nav ul {
@@ -307,6 +320,10 @@ nav ul {
 }
 nav ul li {
 	display: inline;
+	float: left;
+	width: 25%;
+	text-align: center;
+	position: relative;
 }
 nav ul li a {
 	display: block;
@@ -319,10 +336,51 @@ nav ul li.last a {
 	padding-right: 20px;	
 }
 nav ul li a:hover {
-	color: #D4E59F !important;	
+	color: #926D27 !important;	
 }
 nav ul li#current a {	
 	color: #D4E59F !important;
+}
+
+.sous
+{
+	display: none;
+	box-shadow: 0px 1px 2px #CCC;
+	background-color: #926D27;
+	position: absolute;
+	top: 35px;
+	width: 100%;
+	z-index: 1000;
+}
+
+nav > ul li:hover .sous
+{
+	display: block;
+}
+
+.sous li
+{
+	float: none;
+	width: 100%;
+	text-align: left;
+}
+
+.sous a
+{
+	padding: 10px;
+	border-bottom: none;
+}
+
+.sous a:hover
+{
+	border-bottom: none;
+	background-color: rgba(200,200,200,0.1);
+}
+
+.deroulant > a::after
+{
+	content: "▼";
+	font-size: 12px;
 }
 
 #picto-flocon

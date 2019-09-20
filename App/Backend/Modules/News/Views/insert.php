@@ -6,7 +6,7 @@
 </script>
 
 
-<h2>Ajouter une news</h2>
+<h2>AJOUTER UN CHAPITRE</h2>
 <form class="form-news" action="" method="post">
     <?= $form ?>
  
