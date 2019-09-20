@@ -1,3 +1,4 @@
+<img class="loupRedim" alt="Loup" src="../images/loupredim.png">
 <h2>CHAPITRES</h2>
 <p class="texteIntro" style="text-align: center">Il y a actuellement <?= $nombreNews ?> chapitres. En voici la liste (vous pouvez les modifier ou les supprimer).<br>Attention toute suppression est définitive !</p>
  

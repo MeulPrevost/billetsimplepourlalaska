@@ -16,7 +16,14 @@
       <header>
         <h1><a href="/">Billet simple pour l'Alaska</a></h1>
         <p><br>Reconnectez-vous à votre propre nature...</p>
+        <img class="pictoloup" src="../images/wolf.png" href="Picto loup"> 
       </header>
+
+      <?php 
+if (isset($_SESSION['id']) AND isset($_SESSION['pseudo']))
+{
+    echo 'Bonjour ' . $_SESSION['pseudo'];
+}?>
  
       <nav>
         <ul>
@@ -45,6 +52,10 @@
  
       <footer>
         <p><a href="http://billetsimplepourlalaska/admin/">Admin</a><br>Copyright: MeulPrevost2019</p>
+        <?php if ($user->isAuthenticated()) { ?>
+          <a href="/admin/user-logout.html">Deconnexion</a><br><br>
+          <?php } ?>
+          <img class="pictoloupmini" src="../images/wolf.png" href="Picto loup">
       </footer>
     </div>
   </body>

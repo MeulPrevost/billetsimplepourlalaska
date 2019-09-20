@@ -1,3 +1,4 @@
+<img class="loupRedim" alt="Loup" src="../images/loupredim.png">
 <h2>UTILISATEURS</h2>
 <p class="texteIntro">Vous pouvez sur cette page gérer les utilisateurs de votre blog. Ajoutez un nouvel utilisateur en remplissant le formulaire ou supprimer un utilisateur dans la liste.</p>
 <form action="" method="post">
@@ -6,33 +7,8 @@
     <input type="submit" value="Ajouter" />
 </form>
 
-
-<?php 
-// Vérification de la validité des informations 
-//Si le formulaire est rempli alors il envoie les données sinon il ne fait rien
-if ( sizeof($_POST) ) {
-	$bdd = new PDO('mysql:host=localhost;dbname=unbilletpourlalaska;charset=utf8', 'root', '');
-	
-	// Hachage du mot de passe
-	$email = $_POST['email'];
-	$pseudo = $_POST['pseudo'];
-	$pass_hache = password_hash($_POST['pass'], PASSWORD_DEFAULT);
-
-	// Insertion
-	$req = $bdd->prepare('INSERT INTO `users`(`pseudo`, `pass`, `mail`) VALUES (:pseudo, :pass, :email)');
-	$req->execute(array(
-		'pseudo' => $pseudo,
-	    'pass' => $pass_hache,
-	    'email' => $email)
-	);
-
-	echo 'Le nouvel utilisateur a bien été ajouté !';	
-}
-
-?>
-
 <table>
-  <tr><th>Pseudo</th><th>Adresse mail</th><th>Action</th></tr>
+  <tr><th>Pseudo</th><th>Adresse mail</th><th>Date d'ajout</th><th>Action</th></tr>
 <?php
 
 foreach ($users as $tmp_user) :

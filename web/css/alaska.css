@@ -24,11 +24,11 @@ body {
 /* links */
 a, a:visited {
 	text-decoration: none;
-	color: #2180BC;
+	color: #8E5434;;
 	background: inherit;
 }
 a:hover {
-	color: #88ac0b;
+	color: #926D27;
 	background: inherit;
 	text-decoration: underline;
 }
@@ -209,6 +209,14 @@ input.button {
 	vertical-align: top;
 }
 
+/* Espace commentaires */
+
+.espaceCommentaires
+{
+	background-color: #F5F5DC;
+	margin : 40px;
+}
+
 /********************************************
    LAYOUT
 ********************************************/ 
@@ -236,7 +244,7 @@ header
 header h1 a {
 	position: absolute;
 	margin: 0; padding: 0;
-	font: bolder 44px 'Trebuchet MS', Arial, Sans-serif;
+	font: bolder 40px 'Trebuchet MS', Arial, Sans-serif;
 	letter-spacing: -2px;
 	color: #FFF !important;
 	text-transform: none;
@@ -258,6 +266,18 @@ header p {
 	
 	/* change the values of top and left to adjust the position of the slogan*/
 	top: 70px; left: 55px;		
+}
+
+.pictoloup
+{
+	width: 100px;
+	position: relative;
+	left: 730px;
+}
+
+.pictoloupmini
+{
+	width: 40px;
 }
 
 /* header links */
@@ -290,6 +310,14 @@ header #header-links a:hover {
 	bottom: 30px;
 }
 
+.loupRedim
+{
+	max-width: 900px;
+	position: relative;
+	right:90px;
+	bottom: 10px;
+}
+
 /*Baseline*/
 #baseline
 {
@@ -307,7 +335,8 @@ header #header-links a:hover {
 nav 
 {
 	clear: both;	
-	margin: 0 auto; padding: 0;
+	margin: 0 auto; 
+	padding-top: 20px;
 	background: #8E5434;	
 	font: bold 12px/37px Verdana, Arial, Tahoma, Sans-serif;
 	height: 60px;
@@ -321,7 +350,6 @@ nav ul {
 nav ul li {
 	display: inline;
 	float: left;
-	width: 25%;
 	text-align: center;
 	position: relative;
 }
@@ -330,6 +358,7 @@ nav ul li a {
 	float: left;
 	padding: 0 12px;
 	color: #FFF !important;	
+	line-height: 20px;
 	text-decoration: none !important;
 }
 nav ul li.last a {
@@ -341,14 +370,13 @@ nav ul li a:hover {
 nav ul li#current a {	
 	color: #D4E59F !important;
 }
-
 .sous
 {
 	display: none;
 	box-shadow: 0px 1px 2px #CCC;
-	background-color: #926D27;
+	background-color: rgba(200,200,200,0.5);
 	position: absolute;
-	top: 35px;
+	top: 15px;
 	width: 100%;
 	z-index: 1000;
 }
@@ -495,7 +523,7 @@ footer {
 	background: #926D27;
 	clear: both;
 	width: 900px;
-	height: 65px;
+	height: 140px;
 	text-align: center;	
 	font-size: 92%;	
 }

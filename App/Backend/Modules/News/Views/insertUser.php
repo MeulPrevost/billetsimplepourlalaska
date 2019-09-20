@@ -1,3 +1,4 @@
+<img class="loupRedim" alt="Loup" src="../images/loupredim.png">
 <h2>UTILISATEURS</h2>
 <p class="texteIntro">Vous pouvez sur cette page gérer les utilisateurs de votre blog. Ajoutez un nouvel utilisateur en remplissant le formulaire ou supprimer un utilisateur dans la liste.</p>
 <form action="" method="post">

@@ -15,7 +15,7 @@ class NewsController extends BackController
     $nombreCaracteres = $this->app->config()->get('nombre_caracteres');
  
     // On ajoute une définition pour le titre.
-    $this->page->addVar('title', 'Liste des '.$nombreNews.' dernières news');
+    $this->page->addVar('title', 'Billet simple pour l\'Alaska');
  
     // On récupère le manager des news.
     $manager = $this->managers->getManagerOf('News');
