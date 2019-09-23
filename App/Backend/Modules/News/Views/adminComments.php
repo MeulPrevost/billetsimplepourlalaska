@@ -1,3 +1,4 @@
+<img class="loupRedim" alt="Loup" src="../images/loupredim.png">
 <h2>COMMENTAIRES</h2>
 
 <p class="texteIntro">Voici les commentaires publiés votre blog. Les commentaires signalés remontent en premiers. Vous pouvez les supprimer ou les modifier. Attention toute suppression est définitive.<br>
