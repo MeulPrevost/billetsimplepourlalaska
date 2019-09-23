@@ -1,5 +1,6 @@
-<h2>ADMINISTRATION DES CHAPITRES</h2>
-<p class="intro-front" style="text-align: center">Il y a actuellement <?= $nombreNews ?> chapitres. En voici la liste (vous les modifier ou les supprimer).<br>Attention toute suppression est définitive !</p>
+<img class="loupRedim" alt="Loup" src="../images/loupredim.png">
+<h2>CHAPITRES</h2>
+<p class="texteIntro" style="text-align: center">Il y a actuellement <?= $nombreNews ?> chapitres. En voici la liste (vous pouvez les modifier ou les supprimer).<br>Attention toute suppression est définitive !</p>
  
 <table>
   <tr><th>Auteur</th><th>Titre</th><th>Date d'ajout</th><th>Dernière modification</th><th>Action</th></tr>

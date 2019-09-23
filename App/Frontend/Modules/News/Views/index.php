@@ -6,7 +6,7 @@
 
 </div>
 
-<p class="intro-front">Chaque mois, Jean Forteroche mettra en ligne un chapitre de son nouveau roman Billet Simple pour l'Alaska.<br><br>Cliquez sur le chapitre pour y accéder dans son intégralité.<br><br>Bon voyage !</p>
+<p class="texteIntro">Chaque mois, Jean Forteroche mettra en ligne un chapitre de son nouveau roman Billet Simple pour l'Alaska.<br>Cliquez sur le chapitre pour y accéder dans son intégralité.<br>Bon voyage !</p>
 
 <?php
 foreach ($listeNews as $news)

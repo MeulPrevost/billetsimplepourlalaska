@@ -7,7 +7,7 @@
  
     <meta charset="utf-8" />
  
-    <link rel="stylesheet" href="/css/Envision.css" type="text/css" />
+    <link rel="stylesheet" href="/css/alaska.css" type="text/css" />
   </head>
  
   <body>
@@ -16,15 +16,27 @@
       <header>
         <h1><a href="/">Billet simple pour l'Alaska</a></h1>
         <p><br>Reconnectez-vous à votre propre nature...</p>
+        <img class="pictoloup" src="../images/wolf.png" href="Picto loup"> 
       </header>
+
+      <?php 
+if (isset($_SESSION['id']) AND isset($_SESSION['pseudo']))
+{
+    echo 'Bonjour ' . $_SESSION['pseudo'];
+}?>
  
       <nav>
         <ul>
           <li><a href="/">Accueil</a></li>
           <?php if ($user->isAuthenticated()) { ?>
-          <li><a href="/admin/news-insert.html">Ajouter un chapitre</a></li>
-          <li><a href="/admin/">Administration des chapitres</a></li>
-          <li><a href="/admin/comments-admin.html">Administration des commentaires</a></li>
+          <li class="deroulant"><a href="#">Chapitres</a>
+            <ul class="sous">
+              <li><a href="/admin/news-insert.html">Ajouter un chapitre</a></li>
+              <li><a href="/admin/">Administrer les chapitres</a></li>
+            </ul>
+          </li>
+          <li><a href="/admin/comments-admin.html">Commentaires</a></li>
+          <li><a href="/admin/new-user.html">Utilisateurs</a></li>
           
           <?php } ?>
         </ul>
@@ -40,6 +52,10 @@
  
       <footer>
         <p><a href="http://billetsimplepourlalaska/admin/">Admin</a><br>Copyright: MeulPrevost2019</p>
+        <?php if ($user->isAuthenticated()) { ?>
+          <a href="/admin/user-logout.html">Deconnexion</a><br><br>
+          <?php } ?>
+          <img class="pictoloupmini" src="../images/wolf.png" href="Picto loup">
       </footer>
     </div>
   </body>
