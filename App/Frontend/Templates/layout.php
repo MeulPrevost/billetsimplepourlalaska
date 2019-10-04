@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Le layout permet de définir le design du site qui se répète sur l'ensemble des pages du front et du back. -->
 <html>
   <head>
     <title>
@@ -18,13 +19,8 @@
         <p><br>Reconnectez-vous à votre propre nature...</p>
         <img class="pictoloup" src="../images/wolf.png" href="Picto loup"> 
       </header>
-
-      <?php 
-if (isset($_SESSION['id']) AND isset($_SESSION['pseudo']))
-{
-    echo 'Bonjour ' . $_SESSION['pseudo'];
-}?>
  
+      <!-- Menu. Si l'user est identifié des éléments s'ajoutent dans le menu. -->
       <nav>
         <ul>
           <li><a href="/">Accueil</a></li>
@@ -44,9 +40,9 @@ if (isset($_SESSION['id']) AND isset($_SESSION['pseudo']))
  
       <div id="content-wrap">
         <section id="main">
-          <?php if ($user->hasFlash()) echo '<p style="text-align: center;">', $user->getFlash(), '</p>'; ?>
  
           <?= $content ?>
+          
         </section>
       </div>
  

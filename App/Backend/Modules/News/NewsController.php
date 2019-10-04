@@ -1,5 +1,6 @@
 <?php
 namespace App\Backend\Modules\News;
+//Controleur du module news du back (pour gérer les news et les commentaires associés). Ce sont les routes qui assigne un module et une action à une URL.
  
 use \OCFram\BackController;
 use \OCFram\HTTPRequest;
@@ -13,24 +14,30 @@ use \OCFram\FormHandler;
  
 class NewsController extends BackController
 {
-
+  //Fonction qui permet de supprimer un article
   public function executeDelete(HTTPRequest $request)
   {
     $newsId = $request->getData('id');
  
     $this->managers->getManagerOf('News')->delete($newsId);
     $this->managers->getManagerOf('Comments')->deleteFromNews($newsId);
+
+    $this->app->user()->setFlash('Le chapitre a bien été supprimé !');
  
     $this->app->httpResponse()->redirect('.');
   }
  
+  //Fonction qui permet de supprimer un commentaire
   public function executeDeleteComment(HTTPRequest $request)
   {
     $this->managers->getManagerOf('Comments')->delete($request->getData('id'));
+
+    $this->app->user()->setFlash('Le commentaire a bien été supprimé !');
  
     $this->app->httpResponse()->redirect('/admin/comments-admin.html');
   }
  
+  //Fonction qui permet d'administrer les chapitres
   public function executeIndex(HTTPRequest $request)
   {
     $this->page->addVar('title', 'Administrer les chapitres');
@@ -42,6 +49,7 @@ class NewsController extends BackController
     $this->page->addVar('comments', $this->managers->getManagerOf('Comments')->getList());
   }
 
+  //Fontion qui permet d'administrer les commentaires
   public function executeAdminComments(HTTPRequest $request)
   {
     $this->page->addVar('title', 'Administrer les commentaires');
@@ -53,20 +61,26 @@ class NewsController extends BackController
     $this->page->addVar('comments', $this->managers->getManagerOf('Comments')->getList());
   }
  
+  //Fonction qui permet d'insérer un article
   public function executeInsert(HTTPRequest $request)
   {
     $this->processForm($request);
  
     $this->page->addVar('title', 'Ajouter un chapitre');
+
   }
  
+  //Fonction qui permet de modifier un article
   public function executeUpdate(HTTPRequest $request)
   {
     $this->processForm($request);
  
     $this->page->addVar('title', 'Modification d\'un chapitre');
+
+    $this->app->user()->setFlash('Le chapitre a bien été mis à jour !');
   }
  
+  //Fonction qui permet de modifier un commentaire
   public function executeUpdateComment(HTTPRequest $request)
   {
     $this->page->addVar('title', 'Modification d\'un commentaire');
@@ -95,12 +109,14 @@ class NewsController extends BackController
     {
  
       $this->app->httpResponse()->redirect('/admin/comments-admin.html');
+
+      $this->app->user()->setFlash('Le commentaire a bien été mis à jour !');
     }
  
     $this->page->addVar('form', $form->createView());
   }
   
- 
+  //Fonction qui permet de gérer les commentaires
   public function processForm(HTTPRequest $request)
   {
     if ($request->method() == 'POST')

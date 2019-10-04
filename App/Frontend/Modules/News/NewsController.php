@@ -1,6 +1,7 @@
 <?php
 namespace App\Frontend\Modules\News;
- 
+//Controleur du module news du front (pour permettre à l'utilisateur de lire les chapitres, les commenter ou signaler un commentaire.) Ce sont les routes qui assigne un module et une action à une URL.
+
 use \OCFram\BackController;
 use \OCFram\HTTPRequest;
 use \Entity\Comment;
@@ -9,6 +10,7 @@ use \OCFram\FormHandler;
  
 class NewsController extends BackController
 {
+  //Fonction qui permet d'afficher la liste des chapitres déjà parus.
   public function executeIndex(HTTPRequest $request)
   {
     $nombreNews = $this->app->config()->get('nombre_news');
@@ -36,7 +38,8 @@ class NewsController extends BackController
     // On ajoute la variable $listeNews à la vue.
     $this->page->addVar('listeNews', $listeNews);
   }
- 
+  
+  //Fonction qui permet d'affiche un article avec ses commentaires associés.
   public function executeShow(HTTPRequest $request)
   {
     $news = $this->managers->getManagerOf('News')->getUnique($request->getData('id'));
@@ -51,6 +54,7 @@ class NewsController extends BackController
     $this->page->addVar('comments', $this->managers->getManagerOf('Comments')->getListOf($news->id()));
   }
  
+  //Fonction qui permet de faire un commentaire.
   public function executeInsertComment(HTTPRequest $request)
   {
     // Si le formulaire a été envoyé.
@@ -86,9 +90,8 @@ class NewsController extends BackController
     $this->page->addVar('title', 'Ajout d\'un commentaire');
   }
 
-///SIGNALEMENT D'UN COMMENTAIRE
-//On veut que quand la personne clique sur signaler un commentaire la bdd soit modifiée dans la colonne signalement. Un texte apparait pour prévenir que la personne a bien signalée et sur la bdd un 1 apparait à la place du 0 dans la colonne signalement.
-
+  ///Fonction qui permet le signalement d'un commentaire.
+  //Quand un utilisateur clique sur "signaler un commentaire" la bdd soit modifiée dans la colonne signalement (le 0 se transforme en 1 si le commentaire est signalé). Un texte apparait alors à la fois sur le front pour prévenir que le commentaire est signalé.
   public function executeUpdateSignalementComment(HTTPRequest $request)
   {
     // On récupère l'id du commentaire pour savoir quel commentaire on va modifier.

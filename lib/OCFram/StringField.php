@@ -1,5 +1,6 @@
 <?php
 namespace OCFram;
+//Classe fille de Field.
  
 class StringField extends Field
 {

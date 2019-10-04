@@ -26,6 +26,23 @@ class UsersManagerPDO extends UsersManager
     $this->dao->exec('DELETE FROM users WHERE id = '.(int) $id);
   }
  
+  public function getUserIfExistBy($pseudo)
+  {
+    $requete = $this->dao->prepare('SELECT id, pseudo, pass, mail, dateAjout FROM users WHERE pseudo = :pseudo');
+ 
+    $requete->bindValue(':pseudo', $pseudo);
+ 
+    $requete->execute();
+
+    if ( $requete->rowCount() ) {
+      return $requete->fetch();
+    } else {
+      return false;
+    }
+ 
+    // $requete->setFetchMode(\PDO::FETCH_CLASS | \PDO::FETCH_PROPS_LATE, '\Entity\User');
+  }
+ 
   public function getList($debut = -1, $limite = -1)
   {
     $sql = 'SELECT id, pseudo, pass, mail, dateAjout FROM users ORDER BY id DESC';

@@ -1,10 +1,10 @@
 <?php
 namespace App\Backend;
-
-//Cette classe à la différence du frontend est sécurisée. Seules les personnes identifiées y ont accès. Dans le cours on parle de la méthode run() qu'est ce que c'est ?
+//Classe représentant l'application Backend, classe fille de Application. Cette classe à la différence du frontend est sécurisée. Seules les personnes identifiées y ont accès.
  
 use \OCFram\Application;
  
+//la méthode _construct a pour rôle d'appeller le constructeur parent (la classe application) puis de spécifier le nom de l'application.
 //La classe hérite de la classe Application et prend le nom de Backend.
 class BackendApplication extends Application
 {
@@ -14,11 +14,12 @@ class BackendApplication extends Application
  
     $this->name = 'Backend';
   }
- 
+
+  //La méthode run obtient le contrôleur grâce à la méthode parente getController(), exécute le contrôleur, assigne la page créer par le contrôleur à la réponse et envoie la réponse.
   public function run()
   {
     if ($this->user->isAuthenticated())
-      //Si l'utilisateur est identifié on obtient le controleur grâce à la méthode parente getController)
+      //Si l'utilisateur est identifié on obtient le controleur grâce à la méthode parente getController()
     {
       $controller = $this->getController();
     }

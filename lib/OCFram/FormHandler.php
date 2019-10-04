@@ -1,5 +1,6 @@
 <?php
 namespace OCFram;
+//Gestionnaire du formulaire qui traite le formulaire une fois qu'il a été envoyé. Il a besoin de savoir de quel formulaire il s'agit, connaitre le manager correspondant à l'entité et savoir si le formulaire a bien été envoyé pour le traiter.
  
 class FormHandler
 {

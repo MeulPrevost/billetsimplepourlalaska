@@ -1,5 +1,6 @@
 <?php
 namespace OCFram;
+//Classe fille de Validator.
  
 class NotNullValidator extends Validator
 {

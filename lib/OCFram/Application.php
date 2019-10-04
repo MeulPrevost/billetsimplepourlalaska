@@ -1,8 +1,8 @@
 <?php
 namespace OCFram;
-
-//On a définit dans HTTP.request.php et HTTP.reponse.php comment représenter la requète et ce que nous devons lui envoyer en réponse. La class Application a une fonctionnalité : son nom et plusieurs caractéristiques : son nom, la requête du client et la réponse à lui envoyer.
-//Chaque classe répresentant une application hérite de cette classe Application, il n'est donc pas nécessaire d'instancier cette classe. Cela signifie donc que cette classe est abstraite.
+//Class qui définit l'application, elle a deux classes filles : BackendApplication et FrontendApplication.
+//On définit dans HTTP.request.php et HTTP.reponse.php comment représenter la requète et ce que nous devons lui envoyer en réponse. La class Application a une fonctionnalité : son nom et plusieurs caractéristiques : son nom, la requête du client et la réponse à lui envoyer.
+//Chaque classe répresentant une application hérite de cette classe Application, il n'est donc pas nécessaire d'instancier cette classe (créer un objet). Cela signifie donc que cette classe est abstraite.
  
 abstract class Application
 {

@@ -1,6 +1,7 @@
 <?php
 namespace OCFram;
- 
+// L'instance BackController permet d'executer une action, d'obtenir la page associée au controleur et de modifier le module, l'action et la vue associés au controleur.
+
 abstract class BackController extends ApplicationComponent
 {
   protected $action = '';

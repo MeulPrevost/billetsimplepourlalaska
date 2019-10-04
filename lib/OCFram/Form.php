@@ -1,5 +1,7 @@
 <?php
 namespace OCFram;
+//L'objet Form est capable d'ajouter des champs à sa liste de champs, de générer le corps du formulaire afin que le contrôleur puisse les récupérer et les passer à la vue, et vérifier si tous les champs sont valides. 
+//Tous les champs des formulaires sont des objets, ils héritent tous d'une même classe représentant leur nature en commun, à savoir la classe Field. -->
  
 class Form
 {

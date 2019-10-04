@@ -1,3 +1,5 @@
+<!-- Page d'accueil du site. -->
+
 <div class="wrapper-banner">
 
     <img id="imageHeader" alt="Couverture Billet simple pour l'Alaska" src="images/loup.png">
@@ -8,6 +10,7 @@
 
 <p class="texteIntro">Chaque mois, Jean Forteroche mettra en ligne un chapitre de son nouveau roman Billet Simple pour l'Alaska.<br>Cliquez sur le chapitre pour y accéder dans son intégralité.<br>Bon voyage !</p>
 
+<!-- Affiche liste des articles présents en bdd. -->
 <?php
 foreach ($listeNews as $news)
 {

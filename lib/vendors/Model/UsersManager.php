@@ -21,6 +21,13 @@ abstract class UsersManager extends Manager
   abstract public function delete($id);
  
   /**
+   * Méthode permettant de voir si le pseudo existe.
+   * @param $pseudo
+   * @return bool|User
+   */
+  abstract public function getUserIfExistBy($pseudo);
+ 
+  /**
    * Méthode permettant de récupérer liste des utilisateurs.
    * @param $user Les utilisateurs
    * @return array

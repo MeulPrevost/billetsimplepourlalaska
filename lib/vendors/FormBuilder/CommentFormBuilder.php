@@ -1,6 +1,7 @@
 <?php
 namespace FormBuilder;
- 
+//Classe fille de FormBuilder.
+
 use \OCFram\FormBuilder;
 use \OCFram\StringField;
 use \OCFram\TextField;

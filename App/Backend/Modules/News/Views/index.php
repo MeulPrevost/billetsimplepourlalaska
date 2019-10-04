@@ -1,11 +1,17 @@
+<!-- Page d'administration des articles. -->
+
+<!-- Image bandeau loup -->
 <img class="loupRedim" alt="Loup" src="../images/loupredim.png">
+
 <h2>CHAPITRES</h2>
 <p class="texteIntro" style="text-align: center">Il y a actuellement <?= $nombreNews ?> chapitres. En voici la liste (vous pouvez les modifier ou les supprimer).<br>Attention toute suppression est définitive !</p>
- 
+
+<!-- Tableau des articles publiés. -->
 <table>
   <tr><th>Auteur</th><th>Titre</th><th>Date d'ajout</th><th>Dernière modification</th><th>Action</th></tr>
 <?php
 
+//Affiche ligne par ligne des articles présents en bdd.
 foreach ($listeNews as $news) :
 	?>
 	<tr>

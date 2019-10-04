@@ -1,6 +1,5 @@
 <?php
 namespace OCFram;
-
 //Ce fichier définit la réponse envoyée au client. Nous souhaitons assigner une page à la réponse, envoyer la réponse en générant la page, rediriger l'utilisateur, le rediriger vers une erreur 404 si la page n'existe pas, ajouter un cookies, et ajouter un header spécifique selon l'utilisateur (reconnu grâce au cookie).
  
 class HTTPResponse extends ApplicationComponent

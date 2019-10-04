@@ -1,5 +1,6 @@
 <?php
 namespace OCFram;
+//Construit le formulaire.
  
 abstract class FormBuilder
 {
