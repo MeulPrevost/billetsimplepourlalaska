@@ -10,7 +10,7 @@ class UsersManagerPDO extends UsersManager
     $requete = $this->dao->prepare('INSERT INTO users SET pseudo = :pseudo, pass = :pass, mail = :mail, dateAjout = NOW()');
  
     $requete->bindValue(':pseudo', $user->pseudo());
-    $requete->bindValue(':pass', $user->pass());
+    $requete->bindValue(':pass', password_hash($user->pass(), PASSWORD_DEFAULT));
     $requete->bindValue(':mail', $user->mail());
  
     $requete->execute();

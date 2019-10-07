@@ -3,10 +3,10 @@ namespace OCFram;
  
 abstract class Manager
 {
-  protected $dao;
+	protected $dao;
  
-  public function __construct($dao)
-  {
-    $this->dao = $dao;
-  }
+ 	public function __construct($dao)
+  	{
+    	$this->dao = $dao;
+  	}
 }

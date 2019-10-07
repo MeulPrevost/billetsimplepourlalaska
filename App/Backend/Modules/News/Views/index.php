@@ -8,7 +8,7 @@
 
 <!-- Tableau des articles publiés. -->
 <table>
-  <tr><th>Auteur</th><th>Titre</th><th>Date d'ajout</th><th>Dernière modification</th><th>Action</th></tr>
+	<tr><th>Auteur</th><th>Titre</th><th>Date d'ajout</th><th class="colonneDateModif">Dernière modification</th><th>Action</th></tr>
 <?php
 
 //Affiche ligne par ligne des articles présents en bdd.
@@ -20,9 +20,9 @@ foreach ($listeNews as $news) :
 		<td>le <?= $news['dateAjout']->format('d/m/Y à H\hi') ?></td>
 		
 		<?php if ($news['dateAjout'] == $news['dateModif']) : ?> 
-			<td>-</td>
+			<td class="colonneDateModif">-</td>
 		<?php else : ?>
-			<td> le <?= $news['dateModif']->format('d/m/Y à H\hi') ?></td>
+			<td class="colonneDateModif"> le <?= $news['dateModif']->format('d/m/Y à H\hi') ?></td>
 		<?php endif; ?>
 
 		<td>	

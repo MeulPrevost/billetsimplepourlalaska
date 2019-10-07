@@ -8,7 +8,7 @@
 
 <!-- Tableau des commentaires -->
 <table>
-  <tr><th>Auteur</th><th>Contenu</th><th>Date d'ajout</th><th>Signalé</th><th>Action</th></tr>
+	<tr><th>Auteur</th><th>Contenu</th><th>Date d'ajout</th><th>Signalé</th><th>Action</th></tr>
 
 <?php
 //On veut que les commentaires signalés apparaissent en premier.

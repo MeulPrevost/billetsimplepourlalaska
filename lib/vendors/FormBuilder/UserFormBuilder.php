@@ -4,9 +4,12 @@ namespace FormBuilder;
  
 use \OCFram\FormBuilder;
 use \OCFram\StringField;
+use \OCFram\PasswordField;
 use \OCFram\TextField;
 use \OCFram\MaxLengthValidator;
 use \OCFram\NotNullValidator;
+use \OCFram\MailValidator;
+use \OCFram\PseudoValidator;
  
 class UserFormBuilder extends FormBuilder
 {
@@ -22,7 +25,7 @@ class UserFormBuilder extends FormBuilder
           //CET UTILISATEUR EXISTE DEJA MERCI D'EN MENTIONNER UN AUTRE
         ]
        ]))
-       ->add(new StringField([
+       ->add(new PasswordField([
         'label' => 'Pass',
         'name' => 'pass',
         'maxLength' => 50,
@@ -37,6 +40,7 @@ class UserFormBuilder extends FormBuilder
         'maxLength' => 50,
         'validators' => [
           new NotNullValidator('Merci de spécifier le mail du nouvel utilisateur'),
+          new MailValidator('Merci de spécifier un mail au bon format'),
         ]
        ]));
   }

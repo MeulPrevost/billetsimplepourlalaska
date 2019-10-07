@@ -9,9 +9,9 @@
 
 <!-- Formulaire modification commentaire. -->
 <form action="" method="post">
-  <p>
-    <?= $form ?>
- 
-    <input type="submit" value="Modifier" />
-  </p>
+	<p>
+	<?= $form ?>
+
+	<input type="submit" value="Modifier" />
+	</p>
 </form>

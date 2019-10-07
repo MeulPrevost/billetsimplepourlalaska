@@ -2,26 +2,13 @@
 namespace OCFram;
 //Classe fille de Field.
  
-class StringField extends Field
+class PasswordField extends Field
 {
   protected $maxLength;
  
   public function buildWidget()
   {
-    $widget = '';
- 
-    $widget .= '<label>'.$this->label.'</label><input type="text" name="'.$this->name.'"';
- 
-    if (!empty($this->value))
-    {
-      $widget .= ' value="'.htmlspecialchars($this->value).'"';
-    }
- 
-    if (!empty($this->maxLength))
-    {
-      $widget .= ' maxlength="'.$this->maxLength.'"';
-    }
-    $widget .= ' />';
+    $widget = '<label>'.$this->label.'</label><input type="password" name="'.$this->name.'"/>';
 
     if (!empty($this->errorMessage))
     {

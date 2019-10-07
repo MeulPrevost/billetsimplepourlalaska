@@ -58,18 +58,15 @@ class ConnexionController extends BackController
     {
       $user = new User([
         'pseudo' => $request->postData('pseudo'),
-        'pass' => password_hash($request->postData('pass'), PASSWORD_DEFAULT),
+        'pass' => $request->postData('pass'),
         'mail' => $request->postData('mail')
       ]);
-      $this->managers->getManagerOf('Users')->save($user);
-
-      $this->app->user()->setFlash('Le nouvel utilisateur a bien été ajouté, merci !');
+      // $this->managers->getManagerOf('Users')->save($user);
  
-      $this->app->httpResponse()->redirect('/admin/new-user.html');
+    } else {
+      //Création du nouvel utilisateur
+      $user = new User;
     }
-    
-    //Création du nouvel utilisateur
-    $user = new User;
 
     //Définition du formulaire présent dans la page
  
@@ -82,6 +79,12 @@ class ConnexionController extends BackController
 
     $formHandler = new FormHandler($form, $managerUsers, $request);
  
+    if ($formHandler->process())
+    {
+      $this->app->user()->setFlash('Le nouvel utilisateur a bien été ajouté, merci !');
+      $this->app->httpResponse()->redirect('/admin/new-user.html');
+    }
+
     $this->page->addVar('users', $managerUsers->getList());
     $this->page->addVar('form', $form->createView());
 

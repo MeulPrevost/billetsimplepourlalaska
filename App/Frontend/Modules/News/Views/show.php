@@ -3,16 +3,16 @@
 <!-- Affiche l'auteur et les infos de l'article. nl2br permet d'ajouter un retour à la ligne. -->
 <p>Par <em><?= $news['auteur'] ?></em>, le <?= $news['dateAjout']->format('d/m/Y à H\hi') ?></p>
 <h2><?= $news['titre'] ?></h2>
-<p><?= nl2br($news['contenu']) ?></p>
+<div><?= nl2br($news['contenu']) ?></div>
  
 <?php if ($news['dateAjout'] != $news['dateModif']) { ?>
   <p style="text-align: right;"><small><em>Modifiée le <?= $news['dateModif']->format('d/m/Y à H\hi') ?></em></small></p>
 
+  <?php } ?>
 <!-- Affiche les commentaires déjà existants et propose d'en ajouter un nouveau. -->
 
 <div class="espaceCommentaires">
-  <?php } ?>
- 
+
   <p><a href="commenter-<?= $news['id'] ?>.html">Ajouter un commentaire</a></p>
  
   <?php
@@ -41,7 +41,7 @@
         <a href="/admin/comment-delete-<?= $comment['id'] ?>.html">Supprimer</a>
       <?php } ?>
     </legend>
-    <p><?= nl2br(htmlspecialchars($comment['contenu'])) ?></p>
+    <div><?= nl2br(htmlspecialchars($comment['contenu'])) ?></div>
   </fieldset>
   <?php
   }

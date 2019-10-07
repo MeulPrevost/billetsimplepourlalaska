@@ -9,10 +9,10 @@
 
 <!-- Formulaire -->
 <form action="" method="post">
-  <label>Pseudo</label>
-  <input type="text" name="pseudo" value="" /><br />
-  <label>Mot de passe</label>
-  <input type="password" name="pass" /><br /><br />
- 
-  <input type="submit" value="Connexion" />
+	<label>Pseudo</label>
+	<input type="text" name="pseudo" value="" /><br />
+	<label>Mot de passe</label>
+	<input type="password" name="pass" /><br /><br />
+
+	<input type="submit" value="Connexion" />
 </form>

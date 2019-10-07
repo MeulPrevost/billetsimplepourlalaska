@@ -16,7 +16,7 @@
     <div id="wrap">
       <header>
         <h1><a href="/">Billet simple pour l'Alaska</a></h1>
-        <p><br>Reconnectez-vous à votre propre nature...</p>
+        <p class="sousTitre"><br>Reconnectez-vous à votre propre nature...</p>
         <img class="pictoloup" src="../images/wolf.png" href="Picto loup"> 
       </header>
  
