@@ -47,7 +47,7 @@
       </div>
  
       <footer>
-        <p><a href="http://billetsimplepourlalaska/admin/">Admin</a><br>Copyright: MeulPrevost2019</p>
+        <p><a href="/admin/">Admin</a><br>Copyright: MeulPrevost2019</p>
         <?php if ($user->isAuthenticated()) { ?>
           <a href="/admin/user-logout.html">Deconnexion</a><br><br>
           <?php } ?>

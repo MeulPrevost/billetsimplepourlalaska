@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
+
 const DEFAULT_APP = 'Frontend';
  
 // Si l'application n'est pas valide, on va charger l'application par défaut qui se chargera de générer une erreur 404

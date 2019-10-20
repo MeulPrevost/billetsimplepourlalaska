@@ -80,7 +80,6 @@ class NewsController extends BackController
  
     if ($formHandler->process())
     {
-      $this->app->user()->setFlash('Le commentaire a bien été ajouté, merci !');
  
       $this->app->httpResponse()->redirect('news-'.$request->getData('news').'.html');
     }

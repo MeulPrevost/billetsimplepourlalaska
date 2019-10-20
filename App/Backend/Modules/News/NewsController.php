@@ -21,8 +21,6 @@ class NewsController extends BackController
  
     $this->managers->getManagerOf('News')->delete($newsId);
     $this->managers->getManagerOf('Comments')->deleteFromNews($newsId);
-
-    $this->app->user()->setFlash('Le chapitre a bien été supprimé !');
  
     $this->app->httpResponse()->redirect('.');
   }
@@ -31,8 +29,6 @@ class NewsController extends BackController
   public function executeDeleteComment(HTTPRequest $request)
   {
     $this->managers->getManagerOf('Comments')->delete($request->getData('id'));
-
-    $this->app->user()->setFlash('Le commentaire a bien été supprimé !');
  
     $this->app->httpResponse()->redirect('/admin/comments-admin.html');
   }
@@ -77,7 +73,6 @@ class NewsController extends BackController
  
     $this->page->addVar('title', 'Modification d\'un chapitre');
 
-    $this->app->user()->setFlash('Le chapitre a bien été mis à jour !');
   }
  
   //Fonction qui permet de modifier un commentaire
@@ -110,7 +105,6 @@ class NewsController extends BackController
  
       $this->app->httpResponse()->redirect('/admin/comments-admin.html');
 
-      $this->app->user()->setFlash('Le commentaire a bien été mis à jour !');
     }
  
     $this->page->addVar('form', $form->createView());

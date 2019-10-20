@@ -1,2 +1,5 @@
-http://billetsimplepourlalaska/
-http://billetsimplepourlalaska/admin/ 
+http://billetsimplepourlalaska.dashka.fr/
+
+Connexion à l'admin :
+admin
+lalaskacestcool
